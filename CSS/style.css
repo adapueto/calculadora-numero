@@ -52,5 +52,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 15rem;
+    height: 20rem;
+    color: var(--color1);
 }
