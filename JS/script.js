@@ -1,36 +1,26 @@
-// Función para sumar
-function calculateSum() {
+function calcular(simbolo) {
     const num1 = parseInt(document.getElementById('number1').value);
     const num2 = parseInt(document.getElementById('number2').value);
-    displayResult(num1 + num2);
-}
+    const resultElement = document.getElementById('result');
+    
+    if (simbolo == "+") {
+        displayResult(num1 + num2);
 
-// Función para restar
-function calculateSubtract() {
-    const num1 = parseInt(document.getElementById('number1').value);
-    const num2 = parseInt(document.getElementById('number2').value);
-    displayResult(num1 - num2);
-}
+    }else if (simbolo == "-") {
+        displayResult(num1 - num2);
 
-// Función para multiplicar
-function calculateMultiply() {
-    const num1 = parseInt(document.getElementById('number1').value);
-    const num2 = parseInt(document.getElementById('number2').value);
-    displayResult(num1 * num2);
-}
+    }else if (simbolo == "*"){
+        displayResult(num1 * num2);
 
-// Función para dividir
-function calculateDivide() {
-    const num1 = parseInt(document.getElementById('number1').value);
-    const num2 = parseInt(document.getElementById('number2').value);
-    if (num2 === 0) {
-        document.getElementById('result').textContent = 'No se puede dividir entre 0.';
-    } else {
-        displayResult(num1 / num2);
+    }else if (simbolo == "/"){
+        if (num2 == 0) {
+            document.getElementById('result').textContent = 'No se puede dividir entre 0.';
+        } else {
+            displayResult(num1 / num2);
+        } 
     }
 }
 
-// Función genérica para mostrar el resultado
 function displayResult(result) {
     const resultElement = document.getElementById('result');
     if (isNaN(result)) {
