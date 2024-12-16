@@ -4,6 +4,8 @@
     --color3: #dad5b7;
     --color4: #c2b79b;
     --color5: #665e52;
+    --hover: #2f4d5a;
+    --active: #233b46;
 
     --titulos: "Jaro", sans-serif;
     --parrafos: "Parkinsans", sans-serif;
@@ -46,18 +48,29 @@ a:hover {
     color: var(--color4);
 }
 
-header {
-    text-align: center;
+.header {
     background-image: url(https://www.lavanguardia.com/andro4all/hero/2019/08/Calculadora-Xiaomi.jpg?width=1200&aspect_ratio=16:9);
-    background-repeat: no-repeat;
+    position: relative;
+    height: 300px; /* Ajusta la altura del header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color1);
     background-size: cover;
     background-position: center;
-    height: 20rem;
-    color: var(--color1);
+    overflow: hidden;
+}
+
+.header h1, .header p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
 }
 
 
-.menu {
+/*.menu {
     display: flex;
     justify-content: space-around;
     margin-top: 10rem;
@@ -91,12 +104,77 @@ h2 {
 
 .form {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .input {
     display: grid;
-    grid-template-columns: row;
-    margin-left: 3rem;
+    grid-template-rows: 2rem;
     background-color: var(--color4);
+}
+
+#result {
+    color: var(--color2);
+    font-size: 5rem;
+} */
+
+.menu {
+    display: grid; /* Activar Grid */
+    grid-template-columns: 1fr 2fr; /* Dos columnas de igual tamaño */
+    gap: 16px; /* Espacio entre columnas y filas */
+}
+
+form {
+    display: grid;
+    grid-template-rows: auto;
+    padding: 8rem 2rem;
+    background-color: var(--color4);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+button {
+    background-color: var(--color2);
+    margin-top: 2rem;
+    padding: 12px 24px; /* Espaciado interno */
+    color: white; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Esquinas redondeadas */
+    cursor: pointer;
+}
+
+/* Cambios al pasar el mouse */
+button:hover {
+    background-color: var(--hover); /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Cambios al hacer clic */
+button:active {
+    background-color: var(--active); /* Color más oscuro al hacer clic */
+    transform: translateY(0); /* Restaura la posición */
+}
+
+label {
+    margin-bottom: 12px;
+}
+input {
+    padding: 12px 24px;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    border-color: var(--color5);
+    border-style: double;
+}
+
+#result {
+    display: flex;
+    margin-top: 10rem;
+    justify-content: center;
+    font-size: 10rem;
+    color: var(--color1);
 }
