@@ -1,14 +1,14 @@
 
 function calculate(operation) {
-    const num1 = parseFloat(document.getElementById('number1').ariaValueNow);
-    const num2 = parseFloat(document.getElementById('number2').ariaValueNow);
+    const num1 = parseInt(document.getElementById('number1').value);
+    const num2 = parseInt(document.getElementById('number2').value);
     const resultElement = document.getElementById('result');
 
     // Validar que los números sean válidos
     if (isNaN(num1) || isNaN(num2)) {
         resultElement.textContent = 'Error';
         return;
-    }
+    } 
 
     // Realizar la operación seleccionada
     let result;
@@ -24,16 +24,15 @@ function calculate(operation) {
             break;
         case 'divide':
             if (num2 == 0) {
-                resultElement.textContent = 'No se puede dividir entre 0.';
+                resultElement.textContent = 'No es posible';
                 return;
             }
             result = num1 / num2;
             break;
         default:
-            result = 'Operación no válida';
+            result = 'No válida';
     }
 
     // Mostrar el resultado
-    console.log(resultElement);
     resultElement.textContent = result;
 }
