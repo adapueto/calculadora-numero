@@ -24,13 +24,13 @@ function calculate(operation) {
             break;
         case 'divide':
             if (num2 == 0) {
-                resultElement.textContent = 'No es posible';
+                resultElement.textContent = 'ERROR';
                 return;
             }
             result = num1 / num2;
             break;
         default:
-            result = 'No válida';
+            result = 'ERROR';
     }
 
     // Mostrar el resultado
